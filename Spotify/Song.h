@@ -17,25 +17,10 @@ public:
 		return *this;
 	}
 
-	void play();
-	void pause();
-	void addToQueue();
-	void like();
+	void play() {};
+	void pause() {};
+	void addToQueue() {};
+	void like() {};
 };
 
-void Song::play() {
-
-}
-
-void Song::pause() {
-
-}
-
-void Song::addToQueue() {
-
-}
-
-void Song::like() {
-
-}
 

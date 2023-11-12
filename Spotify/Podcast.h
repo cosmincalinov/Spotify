@@ -17,30 +17,11 @@ public:
 		return *this;
 	}
 
-	void play();
-	void pause();
-	void addToQueue();
-	void skip15();
-	void goBack15();
+	void play() {};
+	void pause() {};
+	void addToQueue() {};
+	void skip15() {};
+	void goBack15() {};
 };
 
-void Podcast::play() {
-
-}
-
-void Podcast::pause() {
-
-}
-
-void Podcast::addToQueue() {
-
-}
-
-void Podcast::skip15() {
-
-}
-
-void Podcast::goBack15() {
-
-}
 

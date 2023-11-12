@@ -1,6 +1,6 @@
 #pragma once
+#include <iostream>
 #include "Playlist.h"
-#include "Song.h"
 
 class LikedSongs : public Playlist{
 private:
@@ -12,7 +12,7 @@ private:
 	~LikedSongs() { std::cout << "destr liked" << std::endl; }
 
 public:
-	void shuffle();
+	void shuffle() {};
 
 	static LikedSongs& getInstance() {
 		static LikedSongs* s_instance = new LikedSongs();
@@ -21,7 +21,4 @@ public:
 
 //int LikedSongs::numberOfSongs = 0;
 
-void LikedSongs::shuffle() {
-
-}
 

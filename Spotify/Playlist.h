@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include "Song.h"
 
 class Playlist{
 protected:
@@ -20,9 +19,5 @@ public:
 		return *this;
 	}
 
-	void shuffle();
+	void shuffle() {};
 };
-
-void Playlist::shuffle() {
-
-}
