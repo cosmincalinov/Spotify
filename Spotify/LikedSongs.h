@@ -11,12 +11,6 @@ private:
 	LikedSongs(const LikedSongs& src) : Playlist(src) { std::cout << "copy liked" << std::endl; name = src.name; numberOfSongs = src.numberOfSongs; }
 	~LikedSongs() { std::cout << "destr liked" << std::endl; }
 
-	LikedSongs& operator=(LikedSongs& src) {
-		if (this != &src) {
-			numberOfSongs = src.numberOfSongs;
-		}
-		return *this;
-	}
 public:
 	void shuffle();
 
