@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "Media.h"
 #include "Song.h"
