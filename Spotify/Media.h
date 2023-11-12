@@ -3,7 +3,7 @@
 #include<string>
 
 class Media{
-private:
+protected:
 	const int duration = 0;
 	std::string artist;
 public:

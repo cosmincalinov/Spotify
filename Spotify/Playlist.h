@@ -3,7 +3,7 @@
 #include "Song.h"
 
 class Playlist{
-private:
+protected:
 	int numberOfSongs = 0;
 	std::string name;
 public:

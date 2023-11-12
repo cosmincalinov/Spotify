@@ -4,8 +4,8 @@
 
 class LikedSongs : public Playlist{
 private:
-	static int numberOfSongs;
-	std::string name = "Liked Songs";
+	/*static int numberOfSongs;
+	std::string name = "Liked Songs";*/
 
 	LikedSongs() : Playlist() { std::cout << "constr liked" <<std::endl; }
 	LikedSongs(const LikedSongs& src) : Playlist(src) { std::cout << "copy liked" << std::endl; name = src.name; numberOfSongs = src.numberOfSongs; }
@@ -19,7 +19,7 @@ public:
 	}
 };
 
-int LikedSongs::numberOfSongs = 0;
+//int LikedSongs::numberOfSongs = 0;
 
 void LikedSongs::shuffle() {
 

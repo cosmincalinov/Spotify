@@ -4,8 +4,7 @@
 
 class Song : public Media{
 private:
-	int duration;
-	std::string artist;
+
 public:
 	Song(int _duration) : Media(_duration) { std::cout << "constr song" << std::endl; }
 	Song(const Song& src) : Media(src) { std::cout << "copy song" << std::endl; artist = src.artist; }
