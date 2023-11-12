@@ -4,14 +4,12 @@
 
 class LikedSongs : public Playlist{
 private:
-	int numberOfSongs = 0;
+	static int numberOfSongs;
 	std::string name = "Liked Songs";
-public:
-	void shuffle();
 
-	LikedSongs(std::string _name) : Playlist(_name) { std::cout << "constr liked"; }
-	LikedSongs(const LikedSongs& src) : Playlist(src) { std::cout << "copy liked"; name = src.name; numberOfSongs = src.numberOfSongs; }
-	~LikedSongs() { std::cout << "destr liked"; }
+	LikedSongs() : Playlist() { std::cout << "constr liked" <<std::endl; }
+	LikedSongs(const LikedSongs& src) : Playlist(src) { std::cout << "copy liked" << std::endl; name = src.name; numberOfSongs = src.numberOfSongs; }
+	~LikedSongs() { std::cout << "destr liked" << std::endl; }
 
 	LikedSongs& operator=(LikedSongs& src) {
 		if (this != &src) {
@@ -19,7 +17,15 @@ public:
 		}
 		return *this;
 	}
+public:
+	void shuffle();
+
+	static LikedSongs& getInstance() {
+		static LikedSongs* s_instance = new LikedSongs();
+	}
 };
+
+int LikedSongs::numberOfSongs = 0;
 
 void LikedSongs::shuffle() {
 
