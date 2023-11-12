@@ -128,12 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Media.cpp" />
+    <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Podcast.cpp" />
     <ClCompile Include="Song.cpp" />
     <ClCompile Include="Spotify.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Media.h" />
+    <ClInclude Include="Playlist.h" />
     <ClInclude Include="Podcast.h" />
     <ClInclude Include="Song.h" />
   </ItemGroup>
