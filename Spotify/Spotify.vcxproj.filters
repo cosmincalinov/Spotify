@@ -21,9 +21,21 @@
     <ClCompile Include="Media.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Song.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Podcast.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Media.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Song.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Podcast.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

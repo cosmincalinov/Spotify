@@ -128,10 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Media.cpp" />
+    <ClCompile Include="Podcast.cpp" />
+    <ClCompile Include="Song.cpp" />
     <ClCompile Include="Spotify.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Media.h" />
+    <ClInclude Include="Podcast.h" />
+    <ClInclude Include="Song.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
