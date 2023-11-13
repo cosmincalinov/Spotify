@@ -1,9 +1,15 @@
 #pragma once
 #include <iostream>
+#include <time.h>
+#include <cstdlib>
+#include <vector>
+#include "Song.h"
 
 class Playlist{
+private:
+	std::vector<Song> currPlaylist;
 protected:
-	int numberOfSongs = 0;
+	unsigned int numberOfSongs = 0;
 	std::string name;
 public:
 	Playlist() { std::cout << "constr play" << std::endl; }
@@ -19,5 +25,13 @@ public:
 		return *this;
 	}
 
-	void shuffle() {};
+	void shuffle() {
+		if (this->numberOfSongs == 0) {
+			std::cout << "Cannot find any songs in this playlist";//error class here
+		}
+		else {
+			srand(time(NULL));
+			currPlaylist[rand() % numberOfSongs].play();
+		}
+	};
 };

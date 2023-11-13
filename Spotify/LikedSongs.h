@@ -12,7 +12,7 @@ private:
 	~LikedSongs() { std::cout << "destr liked" << std::endl; }
 
 public:
-	void shuffle() override {};
+	void shuffle() {}
 
 	static LikedSongs& getInstance() {
 		static LikedSongs* s_instance = new LikedSongs();
