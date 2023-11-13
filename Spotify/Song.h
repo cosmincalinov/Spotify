@@ -17,9 +17,9 @@ public:
 		return *this;
 	}
 
-	void play() {};
-	void pause() {};
-	void addToQueue() {};
+	void play() override {};
+	void pause() override {};
+	void addToQueue() override {};
 	void like() {};
 };
 
