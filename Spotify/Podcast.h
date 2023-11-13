@@ -17,7 +17,10 @@ public:
 		return *this;
 	}
 
-	void play() override {};
+	void play() override {
+		std::cout << "Podcast: " << this->name << " by " << this->artist << " is playing. " << std::endl;
+
+	};
 	void pause() override {};
 	void addToQueue() override {};
 	void skip15() {};

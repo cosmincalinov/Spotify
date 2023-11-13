@@ -4,8 +4,9 @@
 
 class Media{
 protected:
-	const int duration = 0;
+	std::string name;
 	std::string artist;
+	const int duration = 0;
 public:
 	Media(int _duration) : duration(_duration) { std::cout << "constr media" << std::endl; }
 	Media(const Media& src) { std::cout << "copy media" << std::endl; artist = src.artist; }

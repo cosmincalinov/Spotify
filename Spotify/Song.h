@@ -17,10 +17,21 @@ public:
 		return *this;
 	}
 
-	void play() override {};
-	void pause() override {};
-	void addToQueue() override {};
-	void like() {};
+	void play() override {
+		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
+	}
+
+	void pause() override {
+	
+	}
+
+	void addToQueue() override {
+	
+	}
+
+	void like() {
+	
+	}
 };
 
 
