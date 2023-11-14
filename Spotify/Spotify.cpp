@@ -9,10 +9,10 @@
 #include "LikedSongs.h"
 
 
+
 int main()
 {
     srand(time(NULL));
-    std::cout << "Hello!\n";
 
     return 0;
 }

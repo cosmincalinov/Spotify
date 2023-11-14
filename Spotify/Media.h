@@ -20,5 +20,6 @@ public:
 	virtual void play() = 0;
 	virtual void pause() = 0;
 	virtual void addToQueue() = 0;
+	virtual void displayTime() = 0;
 };
 
