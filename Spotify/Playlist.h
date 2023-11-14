@@ -9,7 +9,7 @@ class Playlist{
 private:
 	std::vector<Song> currPlaylist;
 protected:
-	unsigned int numberOfSongs = 0;
+	 static unsigned int numberOfSongs;
 	std::string name;
 public:
 	Playlist() { std::cout << "constr play" << std::endl; }
@@ -32,5 +32,6 @@ public:
 		else {
 			currPlaylist[rand() % numberOfSongs].play();
 		}
-	};
+	}
 };
+
