@@ -30,7 +30,6 @@ public:
 			std::cout << "Cannot find any songs in this playlist";//error class here
 		}
 		else {
-			srand(time(NULL));
 			currPlaylist[rand() % numberOfSongs].play();
 		}
 	};
