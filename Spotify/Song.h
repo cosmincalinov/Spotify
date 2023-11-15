@@ -7,7 +7,7 @@ class Song : public Media{
 private:
 
 public:
-	Song(int _duration) : Media(_duration) { std::cout << "constr song" << std::endl; }
+	Song(int _duration = 0) : Media(_duration) { std::cout << "constr song" << std::endl; }
 	Song(const Song& src) : Media(src) { std::cout << "copy song" << std::endl; artist = src.artist; }
 	~Song() { std::cout << "destr song" << std::endl; }
 
@@ -23,7 +23,6 @@ public:
 		int min = 0, sec = 0;
 		while (true)
 		{
-
 			Sleep(1000);
 			system("cls");
 			std::cout << "\t\t\t" << min << ":" << sec << std::endl;
@@ -40,9 +39,9 @@ public:
 		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
 	}
 
-	void pause() override {
-	
-	}
+	/*bool pause() override {
+		return true;
+	}*/
 
 	void addToQueue() override {
 	
