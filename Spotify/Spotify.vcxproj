@@ -130,6 +130,7 @@
     <ClCompile Include="EmptyPlaylist.cpp" />
     <ClCompile Include="LikedSongs.cpp" />
     <ClCompile Include="Media.cpp" />
+    <ClCompile Include="MyQueue.cpp" />
     <ClCompile Include="Playlist.cpp" />
     <ClCompile Include="Podcast.cpp" />
     <ClCompile Include="Song.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="EmptyPlaylist.h" />
     <ClInclude Include="LikedSongs.h" />
     <ClInclude Include="Media.h" />
+    <ClInclude Include="MyQueue.h" />
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Podcast.h" />
     <ClInclude Include="Song.h" />
