@@ -13,7 +13,5 @@
 int main()
 {
     srand(time(NULL));
-    Song s;
-    s.displayTime();
     return 0;
 }

@@ -18,31 +18,6 @@ public:
 		return *this;
 	}
 
-	void displayTime()
-	{
-		int min = 0, sec = 0;
-		while (true)
-		{
-			Sleep(1000);
-			system("cls");
-			std::cout << "\t\t\t" << min << ":" << sec << std::endl;
-			sec++;
-			if (sec == 60)
-			{
-				sec = 0;
-				min++;
-			}
-		}
-	}
-
-	void play() override {
-		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
-	}
-
-	/*bool pause() override {
-		return true;
-	}*/
-
 	void addToQueue() override {
 	
 	}

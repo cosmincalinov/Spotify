@@ -18,8 +18,6 @@ public:
 		return *this;
 	}
 	virtual void play() = 0;
-	//virtual bool pause() = 0;
 	virtual void addToQueue() = 0;
-	virtual void displayTime() = 0;
 };
 
