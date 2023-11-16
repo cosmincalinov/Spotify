@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include<windows.h>
 #include "Media.h"
 
 class Song : public Media{
@@ -16,6 +15,10 @@ public:
 			artist = alt_obj.artist;
 		}
 		return *this;
+	}
+
+	void play() override{
+		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
 	}
 
 	void addToQueue() override {

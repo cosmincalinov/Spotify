@@ -1,7 +1,5 @@
 #pragma once
 #include <iostream>
-#include <time.h>
-#include <cstdlib>
 #include "Media.h"
 #include "Song.h"
 #include "Podcast.h"
