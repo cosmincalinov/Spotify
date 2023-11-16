@@ -28,7 +28,7 @@ public:
 
 	void shuffle() {
 		if (this->numberOfSongs == 0) {
-			std::cout << "Cannot find any songs in this playlist";//error class here
+			throw EmptyPlaylist();
 		}
 		else {
 			currPlaylist[rand() % numberOfSongs].play();
