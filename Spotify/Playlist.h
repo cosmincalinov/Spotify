@@ -34,5 +34,11 @@ public:
 			currPlaylist[rand() % numberOfSongs].play();
 		}
 	}
+
+	Playlist& operator+=(Song addedSong) {
+		this->currPlaylist.push_back(addedSong);
+		this->numberOfSongs++;
+		return *this;
+	}
 };
 
