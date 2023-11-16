@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="EmptyPlaylist.cpp" />
     <ClCompile Include="LikedSongs.cpp" />
     <ClCompile Include="Media.cpp" />
     <ClCompile Include="Playlist.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="Spotify.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EmptyPlaylist.h" />
     <ClInclude Include="LikedSongs.h" />
     <ClInclude Include="Media.h" />
     <ClInclude Include="Playlist.h" />

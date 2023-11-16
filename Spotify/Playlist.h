@@ -4,13 +4,14 @@
 #include <cstdlib>
 #include <vector>
 #include "Song.h"
+#include "EmptyPlaylist.h"
 
 class Playlist{
 private:
 	std::vector<Song> currPlaylist;
 protected:
 	 static unsigned int numberOfSongs;
-	std::string name;
+	 std::string name;
 public:
 	Playlist() { std::cout << "constr play" << std::endl; }
 	Playlist(std::string _name) : name(_name) { std::cout << "constr param play" << std::endl; }
