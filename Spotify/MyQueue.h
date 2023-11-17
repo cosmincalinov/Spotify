@@ -15,10 +15,9 @@ public:
 		return *this;
 	}
 
-	 MyQueue& play() {
+	 void play() {
 		currQueue.front().play();
 		this->currQueue.pop();
-		return *this;
 	}
 
 };
