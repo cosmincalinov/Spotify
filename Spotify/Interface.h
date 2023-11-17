@@ -54,17 +54,55 @@ public:
         std::cout << "1. Play a song." << std::endl;
         std::cout << "2. Add to Liked Songs." << std::endl;
         std::cout << "3. Add to Queue." << std::endl;
+        std::cout << "4. Exit to main menu." << std::endl;
     }
 
     void printPodcastMenu() {
         std::cout << "1. Play a song." << std::endl;
         std::cout << "2. Add to Queue." << std::endl;
+        std::cout << "3. Exit to main menu." << std::endl;
     }
 
     void playlistMenu() {
         std::cout << "1. Add a song." << std::endl;
         std::cout << "2. Play." << std::endl;
         std::cout << "3. Shuffle." << std::endl;
+        std::cout << "4. Exit to main menu." << std::endl;
+    }
+
+    void run() {
+        char menuInput;
+        printMainMenu();
+        std::cin >> menuInput;
+        switch (menuInput) {
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        case 5:
+
+            break;
+        case 6:
+
+            break;
+        case 7:
+
+            break;
+        case 8:
+
+            break;
+        case 9:
+
+            break;
+        }
     }
 };
 
