@@ -10,7 +10,7 @@ protected:
 public:
 	Media(int _duration = 0) : duration(_duration) { std::cout << "constr media" << std::endl; }
 	Media(const Media& src) { std::cout << "copy media" << std::endl; artist = src.artist; }
-	~Media() { std::cout << "destr media" << std::endl; }
+	virtual ~Media() { std::cout << "destr media" << std::endl; }
 	Media& operator=(Media& alt_obj) {
 		if (this != &alt_obj) {
 			artist = alt_obj.artist;
