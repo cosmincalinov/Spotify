@@ -14,5 +14,12 @@ public:
 		this->currQueue.emplace(addedSong);
 		return *this;
 	}
+
+	 MyQueue& play() {
+		currQueue.front().play();
+		this->currQueue.pop();
+		return *this;
+	}
+
 };
 
