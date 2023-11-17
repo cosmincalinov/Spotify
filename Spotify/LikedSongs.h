@@ -15,6 +15,7 @@ public:
 
 	static LikedSongs& getInstance() {
 		static LikedSongs* s_instance = new LikedSongs();
+		return *s_instance;
 	}
 };
 

@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EmptyPlaylist.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="LikedSongs.cpp" />
     <ClCompile Include="Media.cpp" />
     <ClCompile Include="MyQueue.cpp" />
@@ -138,6 +139,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EmptyPlaylist.h" />
+    <ClInclude Include="Interface.h" />
     <ClInclude Include="LikedSongs.h" />
     <ClInclude Include="Media.h" />
     <ClInclude Include="MyQueue.h" />
