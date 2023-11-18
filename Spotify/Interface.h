@@ -63,7 +63,7 @@ public:
         std::cout << "3. Exit to main menu." << std::endl;
     }
 
-    void playlistMenu() {
+    void printPlaylistMenu() {
         std::cout << "1. Add a song." << std::endl;
         std::cout << "2. Play." << std::endl;
         std::cout << "3. Shuffle." << std::endl;
@@ -76,13 +76,13 @@ public:
         std::cin >> menuInput;
         switch (menuInput) {
         case 1:
-
+            printSongMenu();
             break;
         case 2:
-
+            printPodcastMenu();
             break;
         case 3:
-
+            printPlaylistMenu();
             break;
         case 4:
 
