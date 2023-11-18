@@ -77,12 +77,52 @@ public:
         switch (menuInput) {
         case 1:
             printSongMenu();
+            int songMenuInput;
+            std::cin >> songMenuInput;
+            switch (songMenuInput) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+            }
             break;
         case 2:
             printPodcastMenu();
+            int podcastMenuInput;
+            std::cin >> podcastMenuInput;
+            switch (podcastMenuInput) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+            }
             break;
         case 3:
             printPlaylistMenu();
+            int playlistMenuInput;
+            std::cin >> playlistMenuInput;
+            switch (playlistMenuInput) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+                break;
+            }
             break;
         case 4:
 
@@ -100,6 +140,10 @@ public:
 
             break;
         case 9:
+
+            break;
+
+        default:
 
             break;
         }
