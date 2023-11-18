@@ -10,7 +10,7 @@ public:
 		static Interface* s_instance = new Interface();
 		return *s_instance;
 	}
-    void run() {
+    void displayGreetingMessage() {
         std::cout << R"(
                  ((((((((((((((((((                  
              ((((((((((((((((((((((((((((((            
@@ -71,7 +71,7 @@ public:
     }
 
     void run() {
-        char menuInput;
+        int menuInput;
         printMainMenu();
         std::cin >> menuInput;
         switch (menuInput) {
