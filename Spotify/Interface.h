@@ -146,10 +146,11 @@ public:
             this->createPlaylist();
             break;
         case 8:
-
+            MyQueue::getInstance().play();
             break;
         case 9:
-
+            std::cout << "Bye bye!" << std::endl;
+            exit(0);
             break;
 
         default:
