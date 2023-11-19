@@ -11,6 +11,7 @@ class Interface{
 private:
     std::vector<Song> defSongs;
     std::vector<Podcast> defPodcasts;
+    std::vector<Playlist> defPlaylists;
 	Interface(){}
 	~Interface(){}
 public:
@@ -139,10 +140,10 @@ public:
             this->createSong();
             break;
         case 6:
-
+            this->createPodcast();
             break;
         case 7:
-
+            this->createPlaylist();
             break;
         case 8:
 
@@ -173,6 +174,13 @@ public:
         std::cin >> customDuration;
         Podcast createdPodcast(customName, "Me", customDuration);
         defPodcasts.push_back(createdPodcast);
+    }
+
+    void createPlaylist() {
+        std::string customName;
+        std::cin >> customName;
+        Playlist createdPlaylist(customName);
+        defPlaylists.push_back(createdPlaylist);
     }
 };
 
