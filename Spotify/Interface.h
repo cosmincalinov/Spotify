@@ -6,6 +6,7 @@
 #include "Playlist.h"
 #include "LikedSongs.h"
 #include "MyQueue.h"
+#include "WrongInput.h"
 
 class Interface{
 private:
@@ -96,6 +97,7 @@ public:
             case 3:
                 break;
             default:
+                throw WrongInput();
                 break;
             }
             break;
@@ -113,6 +115,7 @@ public:
             case 4:
                 break;
             default:
+                throw WrongInput();
                 break;
             }
             break;
@@ -130,6 +133,7 @@ public:
             case 4:
                 break;
             default:
+                throw WrongInput();
                 break;
             }
             break;
@@ -154,7 +158,7 @@ public:
             break;
 
         default:
-
+            throw WrongInput();
             break;
         }
     }

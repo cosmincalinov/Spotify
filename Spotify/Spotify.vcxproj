@@ -136,6 +136,7 @@
     <ClCompile Include="Podcast.cpp" />
     <ClCompile Include="Song.cpp" />
     <ClCompile Include="Spotify.cpp" />
+    <ClCompile Include="WrongInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EmptyPlaylist.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Playlist.h" />
     <ClInclude Include="Podcast.h" />
     <ClInclude Include="Song.h" />
+    <ClInclude Include="WrongInput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

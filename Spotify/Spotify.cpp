@@ -7,6 +7,7 @@
 #include "Podcast.h"
 #include "Playlist.h"
 #include "LikedSongs.h"
+#include "Interface.h"
 
 
 

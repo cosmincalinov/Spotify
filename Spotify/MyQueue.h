@@ -15,7 +15,7 @@ private:
 public:
 	
 	static MyQueue& getInstance() {
-		MyQueue* s_instance = new MyQueue();
+		static MyQueue* s_instance = new MyQueue();
 		return *s_instance;
 	}
 
