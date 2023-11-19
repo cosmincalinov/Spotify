@@ -134,7 +134,7 @@ public:
             }
             break;
         case 4:
-
+            LikedSongs::getInstance().shuffle();
             break;
         case 5:
             this->createSong();

@@ -7,9 +7,8 @@
 #include "EmptyPlaylist.h"
 
 class Playlist{
-private:
-	std::vector<Song> currPlaylist;
 protected:
+	std::vector<Song> currPlaylist;
 	 static unsigned int numberOfSongs;
 	 std::string name;
 public:
