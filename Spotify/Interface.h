@@ -1,8 +1,16 @@
 #pragma once
 #include <iostream>
+#include <vector>
+#include "Song.h"
+#include "Podcast.h"
+#include "Playlist.h"
+#include "LikedSongs.h"
+#include "MyQueue.h"
 
 class Interface{
 private:
+    std::vector<Song> defSongs;
+    std::vector<Podcast> defPodcasts;
 	Interface(){}
 	~Interface(){}
 public:
@@ -128,7 +136,7 @@ public:
 
             break;
         case 5:
-
+            this->createSong();
             break;
         case 6:
 
@@ -147,6 +155,24 @@ public:
 
             break;
         }
+    }
+
+    void createSong(){
+        std::string customName;
+        int customDuration;
+        std::cin >> customName;
+        std::cin >> customDuration;
+        Song createdSong(customName, "Me", customDuration);
+        defSongs.push_back(createdSong);
+    }
+
+    void createPodcast(){
+        std::string customName;
+        int customDuration;
+        std::cin >> customName;
+        std::cin >> customDuration;
+        Podcast createdPodcast(customName, "Me", customDuration);
+        defPodcasts.push_back(createdPodcast);
     }
 };
 

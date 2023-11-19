@@ -6,9 +6,9 @@ class Podcast : public Media{
 private:
 	
 public:
-	Podcast(int _duration = 0) : Media(_duration) { std::cout << "constr pod" << std::endl; }
-	Podcast(const Podcast& src) : Media(src) { std::cout << "copy pod" << std::endl; artist = src.artist; }
-	~Podcast() { std::cout << "destr pod" << std::endl; }
+	Podcast(std::string _name, std::string _artist,int _duration = 0) : Media(_name,_artist,_duration) { std::cout << "cPod "; }
+	Podcast(const Podcast& src) : Media(src) { std::cout << "ccPod "; artist = src.artist; }
+	~Podcast() { std::cout << "~Pod"; }
 
 	Podcast& operator=(Podcast& alt_obj) {
 		if (this != &alt_obj) {
@@ -18,7 +18,7 @@ public:
 	}
 
 	void play() override {
-		std::cout << "Podcast: " << this->name << " by " << this->artist << " is playing. " << std::endl;
+		std::cout << "Podcast: " << this->name << " by " << this->artist << " is playing." << std::endl;
 
 	}
 	void addToQueue() override {}

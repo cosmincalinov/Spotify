@@ -6,9 +6,9 @@ class Song : public Media{
 private:
 
 public:
-	Song(int _duration = 0) : Media(_duration) { std::cout << "constr song" << std::endl; }
-	Song(const Song& src) : Media(src) { std::cout << "copy song" << std::endl; artist = src.artist; }
-	~Song() { std::cout << "destr song" << std::endl; }
+	Song(std::string _name, std::string _artist, int _duration = 0) : Media(_name,_artist,_duration) { std::cout << "cSong "; }
+	Song(const Song& src) : Media(src) { std::cout << "ccSong "; artist = src.artist; }
+	~Song() { std::cout << "~Song "; }
 
 	Song& operator=(Song& alt_obj) {
 		if (this != &alt_obj) {

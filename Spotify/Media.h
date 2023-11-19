@@ -4,13 +4,13 @@
 
 class Media{
 protected:
-	std::string name;
+	std::string name = "default";
 	std::string artist;
 	const int duration = 0;
 public:
-	Media(int _duration = 0) : duration(_duration) { std::cout << "constr media" << std::endl; }
-	Media(const Media& src) { std::cout << "copy media" << std::endl; artist = src.artist; }
-	virtual ~Media() { std::cout << "destr media" << std::endl; }
+	Media(std::string _name, std::string _artist, int _duration = 0) : name(_name),artist(_artist),duration(_duration) { std::cout << "c media "; }
+	Media(const Media& src) { std::cout << "cc media " << std::endl; artist = src.artist; }
+	virtual ~Media() { std::cout << "~media"; }
 	Media& operator=(Media& alt_obj) {
 		if (this != &alt_obj) {
 			artist = alt_obj.artist;
