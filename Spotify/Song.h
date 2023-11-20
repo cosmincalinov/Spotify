@@ -28,6 +28,8 @@ public:
 	void like() {
 	
 	}
+
+	friend std::ostream& operator<<(std::ostream& out,const Song& src);
 };
 
 

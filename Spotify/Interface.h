@@ -91,6 +91,7 @@ public:
         std::cin >> menuInput;
         switch (menuInput) {
         case 1:
+            for (Song s : defSongs) std::cout << s;
             printSongMenu();
             int songMenuInput;
             std::cin >> songMenuInput;
@@ -107,6 +108,7 @@ public:
             }
             break;
         case 2:
+            for (Podcast p : defPodcasts) std::cout << p;
             printPodcastMenu();
             int podcastMenuInput;
             std::cin >> podcastMenuInput;
@@ -190,5 +192,8 @@ public:
         Playlist createdPlaylist(customName);
         defPlaylists.push_back(createdPlaylist);
     }
+
+    /*friend std::ostream& operator<<(std::ostream& out, const std::vector<Song>& src);
+    friend std::ostream& operator<<(std::ostream& out, const std::vector<Podcast>& src);*/
 };
 

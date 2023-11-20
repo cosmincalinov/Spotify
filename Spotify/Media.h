@@ -4,7 +4,7 @@
 
 class Media{
 protected:
-	std::string name = "default";
+	std::string name;
 	std::string artist;
 public:
 	Media(std::string _name, std::string _artist) : name(_name),artist(_artist){ std::cout << "cMedia "; }
