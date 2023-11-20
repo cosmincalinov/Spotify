@@ -6,7 +6,7 @@ class Podcast : public Media{
 private:
 	
 public:
-	Podcast(std::string _name, std::string _artist,int _duration = 0) : Media(_name,_artist,_duration) { std::cout << "cPod "; }
+	Podcast(std::string _name, std::string _artist) : Media(_name,_artist) { std::cout << "cPod "; }
 	Podcast(const Podcast& src) : Media(src) { std::cout << "ccPod "; artist = src.artist; }
 	~Podcast() { std::cout << "~Pod"; }
 

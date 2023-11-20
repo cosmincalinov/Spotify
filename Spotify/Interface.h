@@ -10,9 +10,15 @@
 
 class Interface{
 private:
-    std::vector<Song> defSongs;
-    std::vector<Podcast> defPodcasts;
-    std::vector<Playlist> defPlaylists;
+    std::vector<Song> defSongs{ Song("Nothing Else Matters", "Metallica"), Song("Africa","Toto"),
+    Song("Smells like Teen Spirit", "Nirvana"), Song("Bohemian Rhapsody","Queen"), 
+    Song("Purple Rain","Prince")};
+
+    std::vector<Podcast> defPodcasts{ Podcast("Major Jobs", "Teland La"),
+    Podcast("Joe Rogan Experience","Joe Rogan"), Podcast("Huberman Lab","Andrew Huberman")};
+
+    std::vector<Playlist> defPlaylists{ Playlist("Chill beats"), Playlist("Heavy metal")};
+
 	Interface(){}
 	~Interface(){}
 public:
@@ -165,7 +171,7 @@ public:
         int customDuration;
         std::cin >> customName;
         std::cin >> customDuration;
-        Song createdSong(customName, "Me", customDuration);
+        Song createdSong(customName, "Me");
         defSongs.push_back(createdSong);
     }
 
@@ -174,7 +180,7 @@ public:
         int customDuration;
         std::cin >> customName;
         std::cin >> customDuration;
-        Podcast createdPodcast(customName, "Me", customDuration);
+        Podcast createdPodcast(customName, "Me");
         defPodcasts.push_back(createdPodcast);
     }
 

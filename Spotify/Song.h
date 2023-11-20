@@ -6,7 +6,7 @@ class Song : public Media{
 private:
 
 public:
-	Song(std::string _name, std::string _artist, int _duration = 0) : Media(_name,_artist,_duration) { std::cout << "cSong "; }
+	Song(std::string _name, std::string _artist) : Media(_name,_artist) { std::cout << "cSong "; }
 	Song(const Song& src) : Media(src) { std::cout << "ccSong "; artist = src.artist; }
 	~Song() { std::cout << "~Song "; }
 
