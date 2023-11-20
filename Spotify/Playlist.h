@@ -8,7 +8,7 @@
 
 class Playlist{
 protected:
-	std::vector<Song> currPlaylist;
+	 std::vector<Song> currPlaylist;
 	 static unsigned int numberOfSongs;
 	 std::string name;
 public:
@@ -25,12 +25,12 @@ public:
 		return *this;
 	}
 
-	void shuffle() {
+	virtual void play() {
 		if (this->numberOfSongs == 0) {
 			throw EmptyPlaylist();
 		}
 		else {
-			currPlaylist[rand() % numberOfSongs].play();
+			for (Song s : currPlaylist) s.play();
 		}
 	}
 

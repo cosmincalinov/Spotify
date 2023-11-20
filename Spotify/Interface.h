@@ -68,7 +68,7 @@ public:
     }
 
     void printPodcastMenu() {
-        std::cout << "1. Play a song." << std::endl;
+        std::cout << "1. Play a podcast." << std::endl;
         std::cout << "2. Add to Queue." << std::endl;
         std::cout << "3. Exit to main menu." << std::endl;
     }
@@ -76,8 +76,7 @@ public:
     void printPlaylistMenu() {
         std::cout << "1. Add a song." << std::endl;
         std::cout << "2. Play." << std::endl;
-        std::cout << "3. Shuffle." << std::endl;
-        std::cout << "4. Exit to main menu." << std::endl;
+        std::cout << "3. Exit to main menu." << std::endl;
     }
 
     void run() {
@@ -130,15 +129,13 @@ public:
                 break;
             case 3:
                 break;
-            case 4:
-                break;
             default:
                 throw WrongInput();
                 break;
             }
             break;
         case 4:
-            LikedSongs::getInstance().shuffle();
+            LikedSongs::getInstance().play();
             break;
         case 5:
             this->createSong();
