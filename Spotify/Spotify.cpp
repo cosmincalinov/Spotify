@@ -9,6 +9,7 @@
 int main()
 {
     srand(time(NULL));
+    Interface::getInstance().displayGreetingMessage();
     //Interface::getInstance().run();
     return 0;
 }
