@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "Media.h"
 #include "Song.h"
 #include "Podcast.h"
 #include "Playlist.h"

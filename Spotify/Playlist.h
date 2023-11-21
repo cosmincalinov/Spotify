@@ -1,7 +1,5 @@
 #pragma once
 #include <iostream>
-#include <time.h>
-#include <cstdlib>
 #include <vector>
 #include "Song.h"
 #include "EmptyPlaylist.h"
@@ -12,10 +10,10 @@ protected:
 	 static unsigned int numberOfSongs;
 	 std::string name;
 public:
-	Playlist() { std::cout << "cPlay " << std::endl; }
-	Playlist(std::string _name) : name(_name) { std::cout << "cpPlay " << std::endl; }
-	Playlist(const Playlist& src) { std::cout << "ccPlay " << std::endl; name = src.name; numberOfSongs = src.numberOfSongs; }
-	virtual ~Playlist() { std::cout << "~Play" << std::endl; }
+	Playlist() {}
+	Playlist(std::string _name) : name(_name) {}
+	Playlist(const Playlist& src) {name = src.name; numberOfSongs = src.numberOfSongs; }
+	virtual ~Playlist() {}
 
 	Playlist& operator=(Playlist& src) {
 		if (this != &src) {

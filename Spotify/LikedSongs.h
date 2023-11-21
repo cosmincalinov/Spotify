@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <time.h>
+#include <cstdlib>
 #include "Playlist.h"
 
 class LikedSongs : public Playlist{
@@ -7,8 +9,8 @@ private:
 	/*static int numberOfSongs;
 	std::string name = "Liked Songs";*/
 
-	LikedSongs() : Playlist() { std::cout << "constr liked" <<std::endl; }
-	~LikedSongs() { std::cout << "destr liked" << std::endl; }
+	LikedSongs() : Playlist() {}
+	~LikedSongs() {}
 
 public:
 	static LikedSongs& getInstance() {

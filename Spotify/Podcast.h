@@ -6,9 +6,9 @@ class Podcast : public Media{
 private:
 	
 public:
-	Podcast(std::string _name, std::string _artist) : Media(_name,_artist) { std::cout << "cPod "; }
-	Podcast(const Podcast& src) : Media(src) { std::cout << "ccPod "; artist = src.artist; }
-	~Podcast() { std::cout << "~Pod"; }
+	Podcast(std::string _name, std::string _artist) : Media(_name,_artist) {}
+	Podcast(const Podcast& src) : Media(src) { artist = src.artist; }
+	~Podcast() {}
 
 	Podcast& operator=(Podcast& alt_obj) {
 		if (this != &alt_obj) {
@@ -23,7 +23,6 @@ public:
 	}
 	void addToQueue() override {}
 
-	friend std::ostream& operator<<(std::ostream& out, const Podcast& src);
 };
 
 
