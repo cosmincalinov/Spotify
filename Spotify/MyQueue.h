@@ -7,7 +7,7 @@
 
 class MyQueue{
 private:
-	std::queue<Song> currQueue;
+	std::queue<Media*> currQueue;
 	static int numberOfSongsInQueue;
 
 	MyQueue() {}
@@ -19,18 +19,20 @@ public:
 		return *s_instance;
 	}
 
-	MyQueue& operator+=(Song addedSong) {
-		this->currQueue.emplace(addedSong);
+	MyQueue& operator+=(Media* addedMedia) {
+		this->currQueue.emplace(addedMedia);
 		numberOfSongsInQueue++;
 		return *this;
 	}
 
-	void play() {
+	void playQueue() {
 		if (this->numberOfSongsInQueue == 0) throw EmptyPlaylist();
-		for (int i = 0; i < numberOfSongsInQueue; i++) {
-			this->currQueue.front().play();
+		int nbSongsCache = numberOfSongsInQueue;
+		for (int i = 0; i < nbSongsCache; i++) {
+			currQueue.front()->play();
 			Sleep(2);
 			this->currQueue.pop();
+			numberOfSongsInQueue--;
 		}
 	}
 
