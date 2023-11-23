@@ -3,8 +3,6 @@
 #include "Media.h"
 
 class Song : public Media{
-private:
-
 public:
 	Song(std::string _name, std::string _artist) : Media(_name,_artist) {}
 	Song(const Song& src) : Media(src) { artist = src.artist; }
@@ -29,7 +27,7 @@ public:
 	
 	}
 
-	friend std::ostream& operator<<(std::ostream& out,const Song& src);
+	//friend std::ostream& operator<<(std::ostream& out,const Media& src);
 };
 
 

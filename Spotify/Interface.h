@@ -87,6 +87,7 @@ public:
     }
 
     void run() {
+        mainMenu:
         int menuInput;
         printMainMenu();
         std::cin >> menuInput;
@@ -102,6 +103,7 @@ public:
             case 2:
                 break;
             case 3:
+                goto mainMenu;
                 break;
             default:
                 throw WrongInput();
@@ -121,6 +123,7 @@ public:
             case 3:
                 break;
             case 4:
+                goto mainMenu;
                 break;
             default:
                 throw WrongInput();
@@ -137,6 +140,7 @@ public:
             case 2:
                 break;
             case 3:
+                goto mainMenu;
                 break;
             default:
                 throw WrongInput();
