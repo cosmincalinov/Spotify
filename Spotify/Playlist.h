@@ -30,7 +30,7 @@ public:
 			throw EmptyPlaylist();
 		}
 		else {
-			for (Song s : currPlaylist) { s.play(); Sleep(1); }
+			for (Song s : currPlaylist) { s.play(); Sleep(2000); }
 		}
 	}
 

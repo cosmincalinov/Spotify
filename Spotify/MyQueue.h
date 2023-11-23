@@ -30,7 +30,7 @@ public:
 		int nbSongsCache = numberOfSongsInQueue;
 		for (int i = 0; i < nbSongsCache; i++) {
 			currQueue.front()->play();
-			Sleep(2);
+			Sleep(2000);
 			this->currQueue.pop();
 			numberOfSongsInQueue--;
 		}
