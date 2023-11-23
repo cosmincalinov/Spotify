@@ -1,13 +1,15 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <Windows.h>
 #include "Song.h"
 #include "EmptyPlaylist.h"
 
 class Playlist{
+private:
+	static unsigned int numberOfSongs;
 protected:
 	 std::vector<Song> currPlaylist;
-	 static unsigned int numberOfSongs;
 	 std::string name;
 public:
 	Playlist() {}
@@ -28,7 +30,7 @@ public:
 			throw EmptyPlaylist();
 		}
 		else {
-			for (Song s : currPlaylist) s.play();
+			for (Song s : currPlaylist) { s.play(); Sleep(1); }
 		}
 	}
 

@@ -160,7 +160,7 @@ public:
             this->createPlaylist();
             break;
         case 8:
-            MyQueue::getInstance().play();
+            MyQueue::getInstance().playQueue();
             break;
         case 9:
             std::cout << "Bye bye!" << std::endl;

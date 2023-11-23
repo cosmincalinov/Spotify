@@ -6,10 +6,9 @@
 
 class LikedSongs : public Playlist{
 private:
-	/*static int numberOfSongs;
-	std::string name = "Liked Songs";*/
+	static unsigned int numberOfLiked;
 
-	LikedSongs() : Playlist() {}
+	LikedSongs() : Playlist("Liked Songs") {}
 	~LikedSongs() {}
 
 public:
@@ -19,15 +18,14 @@ public:
 	}
 
 	void play() override {
-		if (this->numberOfSongs == 0) {
+		if (this->numberOfLiked == 0) {
 			throw EmptyPlaylist();
 		}
 		else {
-			currPlaylist[rand() % numberOfSongs].play();
+			currPlaylist[rand() % numberOfLiked].play();
 		}
 	}
 };
 
-//int LikedSongs::numberOfSongs = 0;
 
 
