@@ -8,7 +8,7 @@
 class MyQueue{
 private:
 	std::queue<Song> currQueue;
-	int numberOfSongsInQueue = 0;
+	static int numberOfSongsInQueue;
 
 	MyQueue() {}
 	~MyQueue() {}

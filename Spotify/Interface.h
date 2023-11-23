@@ -175,24 +175,23 @@ public:
 
     void createSong(){
         std::string customName;
-        int customDuration;
+        std::cout << "Enter the song's name: ";
         std::cin >> customName;
-        std::cin >> customDuration;
         Song createdSong(customName, "Me");
         defSongs.push_back(createdSong);
     }
 
     void createPodcast(){
         std::string customName;
-        int customDuration;
+        std::cout << "Enter the podcast's name: ";
         std::cin >> customName;
-        std::cin >> customDuration;
         Podcast createdPodcast(customName, "Me");
         defPodcasts.push_back(createdPodcast);
     }
 
     void createPlaylist() {
         std::string customName;
+        std::cout << "Enter the playlist's name: ";
         std::cin >> customName;
         Playlist createdPlaylist(customName);
         defPlaylists.push_back(createdPlaylist);
