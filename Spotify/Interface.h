@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "Media.h"
 #include "Song.h"
 #include "Podcast.h"
@@ -160,8 +161,8 @@ public:
                 break;
             case 3:
                 system("cls");
-                printPlaylistMenu();
                 for (Playlist play : defPlaylists) std::cout << play;
+                printPlaylistMenu();
                 int playlistMenuInput;
                 std::cin >> playlistMenuInput;
                 switch (playlistMenuInput) {
@@ -229,24 +230,24 @@ public:
         std::string customName;
         std::cout << "Enter the song's name: ";
         std::cin >> customName;
-        Song createdSong(customName, "Me");
-        defSongs.push_back(createdSong);
+        std::unique_ptr<Song> createdSong = std::make_unique<Song>(customName, "Me");
+        defSongs.push_back(*createdSong);
     }
 
     void createPodcast(){
         std::string customName;
         std::cout << "Enter the podcast's name: ";
         std::cin >> customName;
-        Podcast createdPodcast(customName, "Me");
-        defPodcasts.push_back(createdPodcast);
+        std::unique_ptr<Podcast> createdPodcast = std::make_unique<Podcast>(customName, "Me");
+        defPodcasts.push_back(*createdPodcast);
     }
 
     void createPlaylist() {
         std::string customName;
         std::cout << "Enter the playlist's name: ";
         std::cin >> customName;
-        Playlist createdPlaylist(customName);
-        defPlaylists.push_back(createdPlaylist);
+        std::unique_ptr<Playlist> createdPlaylist = std::make_unique<Playlist>(customName);
+        defPlaylists.push_back(*createdPlaylist);
     }
 
     /*friend std::ostream& operator<<(std::ostream& out, const std::vector<Song>& src);
