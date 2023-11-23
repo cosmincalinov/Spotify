@@ -39,5 +39,7 @@ public:
 		this->numberOfSongs++;
 		return *this;
 	}
+
+	friend std::ostream& operator<<(std::ostream& out, Playlist src);
 };
 

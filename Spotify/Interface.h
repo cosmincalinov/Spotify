@@ -159,7 +159,9 @@ public:
                 }
                 break;
             case 3:
+                system("cls");
                 printPlaylistMenu();
+                for (Playlist play : defPlaylists) std::cout << play;
                 int playlistMenuInput;
                 std::cin >> playlistMenuInput;
                 switch (playlistMenuInput) {
