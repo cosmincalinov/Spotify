@@ -145,7 +145,7 @@ public:
                     system("cls");
                     break;
                 case 2:
-                    std::cout << "Choose the song's number: ";
+                    std::cout << "Choose the podcast's number: ";
                     int queuepNumber;
                     std::cin >> queuepNumber;
                     MyQueue::getInstance() += &defPodcasts[queuepNumber];
@@ -211,6 +211,7 @@ public:
                 break;
             case 8:
                 MyQueue::getInstance().playQueue();
+                std::cin.get();
                 system("cls");
                 break;
             case 9:
