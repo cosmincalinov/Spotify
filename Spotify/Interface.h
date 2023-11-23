@@ -114,7 +114,7 @@ public:
                 std::cout << "Choose the song's number: ";
                 int queueNumber;
                 std::cin >> queueNumber;
-                MyQueue::getInstance() += &defSongs[likeNumber];
+                MyQueue::getInstance() += &defSongs[queueNumber];
                 break;
             case 4:
                 goto mainMenu;
