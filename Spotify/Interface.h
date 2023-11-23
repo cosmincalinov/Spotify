@@ -99,10 +99,24 @@ public:
             std::cin >> songMenuInput;
             switch (songMenuInput) {
             case 1:
+                std::cout << "Choose the song's number: ";
+                int songNumber;
+                std::cin >> songNumber;
+                defSongs[songNumber].play();
                 break;
             case 2:
+                std::cout << "Choose the song's number: ";
+                int likeNumber;
+                std::cin >> likeNumber;
+                LikedSongs::getInstance()+=defSongs[likeNumber];
                 break;
             case 3:
+                std::cout << "Choose the song's number: ";
+                int queueNumber;
+                std::cin >> queueNumber;
+                MyQueue::getInstance() += &defSongs[likeNumber];
+                break;
+            case 4:
                 goto mainMenu;
                 break;
             default:
@@ -117,12 +131,14 @@ public:
             std::cin >> podcastMenuInput;
             switch (podcastMenuInput) {
             case 1:
+                std::cout << "Choose the podcast's number: ";
+                int podcastNumber;
+                std::cin >> podcastNumber;
+                defPodcasts[podcastNumber].play();
                 break;
             case 2:
                 break;
             case 3:
-                break;
-            case 4:
                 goto mainMenu;
                 break;
             default:
@@ -136,8 +152,21 @@ public:
             std::cin >> playlistMenuInput;
             switch (playlistMenuInput) {
             case 1:
+                std::cout << "Choose the playlist's number: ";
+                int playlistNumber;
+                std::cin >> playlistNumber;
+
+                for (Song so : defSongs) std::cout << so;
+                std::cout << "Choose the song's number: ";
+                int addNumber;
+                std::cin >> addNumber;
+                defPlaylists[playlistNumber]+=defSongs[addNumber];
                 break;
             case 2:
+                std::cout << "Choose the playlist's number: ";
+                int playNumber;
+                std::cin >> playNumber;
+                defPlaylists[playNumber].play();
                 break;
             case 3:
                 goto mainMenu;
