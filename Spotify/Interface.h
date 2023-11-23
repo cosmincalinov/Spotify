@@ -87,118 +87,139 @@ public:
     }
 
     void run() {
+        while (1) {
         mainMenu:
-        int menuInput;
-        printMainMenu();
-        std::cin >> menuInput;
-        switch (menuInput) {
-        case 1:
-            for (Song s : defSongs) std::cout << s;
-            printSongMenu();
-            int songMenuInput;
-            std::cin >> songMenuInput;
-            switch (songMenuInput) {
+            int menuInput;
+            printMainMenu();
+            std::cin >> menuInput;
+            switch (menuInput) {
             case 1:
-                std::cout << "Choose the song's number: ";
-                int songNumber;
-                std::cin >> songNumber;
-                defSongs[songNumber].play();
+                system("cls");
+                for (Song s : defSongs) std::cout << s;
+                printSongMenu();
+                int songMenuInput;
+                std::cin >> songMenuInput;
+                switch (songMenuInput) {
+                case 1:
+                    std::cout << "Choose the song's number: ";
+                    int songNumber;
+                    std::cin >> songNumber;
+                    defSongs[songNumber].play();
+                    break;
+                case 2:
+                    system("cls");
+                    std::cout << "Choose the song's number: ";
+                    int likeNumber;
+                    std::cin >> likeNumber;
+                    LikedSongs::getInstance() += defSongs[likeNumber];
+                    break;
+                case 3:
+                    system("cls");
+                    std::cout << "Choose the song's number: ";
+                    int queueNumber;
+                    std::cin >> queueNumber;
+                    MyQueue::getInstance() += &defSongs[queueNumber];
+                    break;
+                case 4:
+                    system("cls");
+                    goto mainMenu;
+                    break;
+                default:
+                    throw WrongInput();
+                    break;
+                }
                 break;
             case 2:
-                std::cout << "Choose the song's number: ";
-                int likeNumber;
-                std::cin >> likeNumber;
-                LikedSongs::getInstance()+=defSongs[likeNumber];
+                system("cls");
+                for (Podcast p : defPodcasts) std::cout << p;
+                printPodcastMenu();
+                int podcastMenuInput;
+                std::cin >> podcastMenuInput;
+                switch (podcastMenuInput) {
+                case 1:
+                    std::cout << "Choose the podcast's number: ";
+                    int podcastNumber;
+                    std::cin >> podcastNumber;
+                    defPodcasts[podcastNumber].play();
+                    system("cls");
+                    break;
+                case 2:
+                    std::cout << "Choose the song's number: ";
+                    int queuepNumber;
+                    std::cin >> queuepNumber;
+                    MyQueue::getInstance() += &defPodcasts[queuepNumber];
+                    break;
+                case 3:
+                    system("cls");
+                    goto mainMenu;
+                    break;
+                default:
+                    throw WrongInput();
+                    break;
+                }
                 break;
             case 3:
-                std::cout << "Choose the song's number: ";
-                int queueNumber;
-                std::cin >> queueNumber;
-                MyQueue::getInstance() += &defSongs[queueNumber];
+                printPlaylistMenu();
+                int playlistMenuInput;
+                std::cin >> playlistMenuInput;
+                switch (playlistMenuInput) {
+                case 1:
+                    std::cout << "Choose the playlist's number: ";
+                    int playlistNumber;
+                    std::cin >> playlistNumber;
+
+                    for (Song so : defSongs) std::cout << so;
+                    std::cout << "Choose the song's number: ";
+                    int addNumber;
+                    std::cin >> addNumber;
+                    defPlaylists[playlistNumber] += defSongs[addNumber];
+                    system("cls");
+                    break;
+                case 2:
+                    std::cout << "Choose the playlist's number: ";
+                    int playNumber;
+                    std::cin >> playNumber;
+                    defPlaylists[playNumber].play();
+                    system("cls");
+                    break;
+                case 3:
+                    goto mainMenu;
+                    break;
+                default:
+                    throw WrongInput();
+                    break;
+                }
                 break;
             case 4:
-                goto mainMenu;
+                LikedSongs::getInstance().play();
+                system("cls");
                 break;
-            default:
-                throw WrongInput();
+            case 5:
+                this->createSong();
+                system("cls");
                 break;
-            }
-            break;
-        case 2:
-            for (Podcast p : defPodcasts) std::cout << p;
-            printPodcastMenu();
-            int podcastMenuInput;
-            std::cin >> podcastMenuInput;
-            switch (podcastMenuInput) {
-            case 1:
-                std::cout << "Choose the podcast's number: ";
-                int podcastNumber;
-                std::cin >> podcastNumber;
-                defPodcasts[podcastNumber].play();
+            case 6:
+                this->createPodcast();
+                system("cls");
                 break;
-            case 2:
+            case 7:
+                this->createPlaylist();
+                system("cls");
                 break;
-            case 3:
-                goto mainMenu;
+            case 8:
+                MyQueue::getInstance().playQueue();
+                system("cls");
                 break;
-            default:
-                throw WrongInput();
+            case 9:
+                system("cls");
+                std::cout << "Bye bye!" << std::endl;
+                exit(0);
                 break;
-            }
-            break;
-        case 3:
-            printPlaylistMenu();
-            int playlistMenuInput;
-            std::cin >> playlistMenuInput;
-            switch (playlistMenuInput) {
-            case 1:
-                std::cout << "Choose the playlist's number: ";
-                int playlistNumber;
-                std::cin >> playlistNumber;
 
-                for (Song so : defSongs) std::cout << so;
-                std::cout << "Choose the song's number: ";
-                int addNumber;
-                std::cin >> addNumber;
-                defPlaylists[playlistNumber]+=defSongs[addNumber];
-                break;
-            case 2:
-                std::cout << "Choose the playlist's number: ";
-                int playNumber;
-                std::cin >> playNumber;
-                defPlaylists[playNumber].play();
-                break;
-            case 3:
-                goto mainMenu;
-                break;
             default:
                 throw WrongInput();
                 break;
             }
-            break;
-        case 4:
-            LikedSongs::getInstance().play();
-            break;
-        case 5:
-            this->createSong();
-            break;
-        case 6:
-            this->createPodcast();
-            break;
-        case 7:
-            this->createPlaylist();
-            break;
-        case 8:
-            MyQueue::getInstance().playQueue();
-            break;
-        case 9:
-            std::cout << "Bye bye!" << std::endl;
-            exit(0);
-            break;
-
-        default:
-            throw WrongInput();
-            break;
         }
     }
 
