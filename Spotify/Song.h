@@ -19,14 +19,6 @@ public:
 		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
 	}
 
-	void addToQueue() override {
-	
-	}
-
-	void like() {
-	
-	}
-
 	//friend std::ostream& operator<<(std::ostream& out,const Media& src);
 };
 

@@ -19,7 +19,6 @@ public:
 		std::cout << "Podcast: " << this->name << " by " << this->artist << " is playing." << std::endl;
 
 	}
-	void addToQueue() override {}
 
 };
 

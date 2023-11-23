@@ -19,6 +19,5 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const Media& src);
 
 	virtual void play() = 0;
-	virtual void addToQueue() = 0;
 };
 

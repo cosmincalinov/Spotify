@@ -25,6 +25,12 @@ public:
 			currPlaylist[rand() % numberOfLiked].play();
 		}
 	}
+
+	LikedSongs& operator+=(Song fav){
+		this->currPlaylist.push_back(fav);
+		this->numberOfLiked++;
+		return *this;
+	}
 };
 
 
