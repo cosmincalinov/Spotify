@@ -21,13 +21,13 @@ int main()
     }
     catch (const EmptyPlaylist& e) {
         system("cls");
-        std::cout << "Empty playlist!" << std::endl;
+        std::cout << e.what() << std::endl;
         std::cout << std::endl;
         Interface::getInstance().run();
     }
     catch (const WrongInput& w) {
         system("cls");
-        std::cout << "Wrong input!" << std::endl;
+        std::cout << w.what() << std::endl;
         std::cout << std::endl;
         Interface::getInstance().run();
     }
