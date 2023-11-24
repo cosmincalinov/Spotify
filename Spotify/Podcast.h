@@ -5,7 +5,7 @@
 class Podcast : public Media{
 public:
 	Podcast(std::string _name, std::string _artist) : Media(_name,_artist) {}
-	Podcast(const Podcast& src) : Media(src) { artist = src.artist; }
+	Podcast(const Podcast& src) : Media(src) { name = src.name; artist = src.artist; }
 	~Podcast() {}
 
 	Podcast& operator=(Podcast& alt_obj) {
