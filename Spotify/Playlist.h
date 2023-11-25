@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <Windows.h>
 #include "Song.h"
 #include "EmptyPlaylist.h"
 
@@ -30,7 +29,7 @@ public:
 			throw EmptyPlaylist();
 		}
 		else {
-			for (Song s : currPlaylist) { s.play(); Sleep(2000); }
+			for (Song s : currPlaylist) { s.play(); }
 		}
 	}
 

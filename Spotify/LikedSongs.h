@@ -18,6 +18,7 @@ public:
 	}
 
 	void play() override {
+		//fix this
 		if (this->numberOfLiked == 0) {
 			throw EmptyPlaylist();
 		}

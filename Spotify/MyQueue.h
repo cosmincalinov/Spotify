@@ -1,7 +1,6 @@
 #pragma once
 #include<iostream>
 #include<queue>
-#include<windows.h>
 #include "Song.h"
 #include "EmptyPlaylist.h"
 
@@ -30,7 +29,6 @@ public:
 		int nbSongsCache = numberOfSongsInQueue;
 		for (int i = 0; i < nbSongsCache; i++) {
 			currQueue.front()->play();
-			Sleep(2000);
 			this->currQueue.pop();
 			numberOfSongsInQueue--;
 		}

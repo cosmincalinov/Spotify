@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <Windows.h>
 #include "Media.h"
 
 class Song : public Media{
@@ -17,6 +18,7 @@ public:
 
 	void play() override{
 		std::cout << "Song: " << this->name << " by " << this->artist << " is playing. " << std::endl;
+		Sleep(2000);
 	}
 
 	//friend std::ostream& operator<<(std::ostream& out,const Media& src);

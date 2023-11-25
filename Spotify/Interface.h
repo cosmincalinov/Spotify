@@ -102,24 +102,16 @@ public:
                 std::cin >> songMenuInput;
                 switch (songMenuInput) {
                 case 1:
-                    std::cout << "Choose the song's number: ";
-                    int songNumber;
-                    std::cin >> songNumber;
-                    defSongs[songNumber].play();
+                    playSong();
+                    system("cls");
                     break;
                 case 2:
+                    likeSong();
                     system("cls");
-                    std::cout << "Choose the song's number: ";
-                    int likeNumber;
-                    std::cin >> likeNumber;
-                    LikedSongs::getInstance() += defSongs[likeNumber];
                     break;
                 case 3:
+                    addSongToQueue();
                     system("cls");
-                    std::cout << "Choose the song's number: ";
-                    int queueNumber;
-                    std::cin >> queueNumber;
-                    MyQueue::getInstance() += &defSongs[queueNumber];
                     break;
                 case 4:
                     system("cls");
@@ -138,17 +130,12 @@ public:
                 std::cin >> podcastMenuInput;
                 switch (podcastMenuInput) {
                 case 1:
-                    std::cout << "Choose the podcast's number: ";
-                    int podcastNumber;
-                    std::cin >> podcastNumber;
-                    defPodcasts[podcastNumber].play();
+                    playPodcast();
                     system("cls");
                     break;
                 case 2:
-                    std::cout << "Choose the podcast's number: ";
-                    int queuepNumber;
-                    std::cin >> queuepNumber;
-                    MyQueue::getInstance() += &defPodcasts[queuepNumber];
+                    addPodcastToQueue();
+                    system("cls");
                     break;
                 case 3:
                     system("cls");
@@ -162,27 +149,17 @@ public:
             case 3:
                 system("cls");
                 for (Playlist play : defPlaylists) std::cout << play;
+                std::cout << std::endl;
                 printPlaylistMenu();
                 int playlistMenuInput;
                 std::cin >> playlistMenuInput;
                 switch (playlistMenuInput) {
                 case 1:
-                    std::cout << "Choose the playlist's number: ";
-                    int playlistNumber;
-                    std::cin >> playlistNumber;
-
-                    for (Song so : defSongs) std::cout << so;
-                    std::cout << "Choose the song's number: ";
-                    int addNumber;
-                    std::cin >> addNumber;
-                    defPlaylists[playlistNumber] += defSongs[addNumber];
+                    addSongToPlaylist();
                     system("cls");
                     break;
                 case 2:
-                    std::cout << "Choose the playlist's number: ";
-                    int playNumber;
-                    std::cin >> playNumber;
-                    defPlaylists[playNumber].play();
+                    playPlaylist();
                     system("cls");
                     break;
                 case 3:
@@ -251,7 +228,58 @@ public:
         defPlaylists.push_back(*createdPlaylist);
     }
 
-    /*friend std::ostream& operator<<(std::ostream& out, const std::vector<Song>& src);
-    friend std::ostream& operator<<(std::ostream& out, const std::vector<Podcast>& src);*/
+    void playPlaylist() {
+        std::cout << "Choose the playlist's number: ";
+        int playNumber;
+        std::cin >> playNumber;
+        defPlaylists[playNumber].play();
+   }
+
+    void addSongToPlaylist() {
+        std::cout << "Choose the playlist's number: ";
+        int playlistNumber;
+        std::cin >> playlistNumber;
+
+        for (Song so : defSongs) std::cout << so;
+        std::cout << "Choose the song's number: ";
+        int addNumber;
+        std::cin >> addNumber;
+        defPlaylists[playlistNumber] += defSongs[addNumber];
+    }
+
+    void addPodcastToQueue() {
+        std::cout << "Choose the podcast's number: ";
+        int queuepNumber;
+        std::cin >> queuepNumber;
+        MyQueue::getInstance() += &defPodcasts[queuepNumber];
+    }
+
+    void playPodcast() {
+        std::cout << "Choose the podcast's number: ";
+        int podcastNumber;
+        std::cin >> podcastNumber;
+        defPodcasts[podcastNumber].play();
+    }
+
+    void addSongToQueue() {
+        std::cout << "Choose the song's number: ";
+        int queueNumber;
+        std::cin >> queueNumber;
+        MyQueue::getInstance() += &defSongs[queueNumber];
+    }
+
+    void likeSong() {
+        std::cout << "Choose the song's number: ";
+        int likeNumber;
+        std::cin >> likeNumber;
+        LikedSongs::getInstance() += defSongs[likeNumber];
+    }
+
+    void playSong() {
+        std::cout << "Choose the song's number: ";
+        int songNumber;
+        std::cin >> songNumber;
+        defSongs[songNumber].play();
+    }
 };
 
