@@ -18,12 +18,13 @@ public:
 	}
 
 	void play() override {
-		//fix this
-		if (this->numberOfLiked == 0) {
-			throw EmptyPlaylist();
-		}
-		else {
-			currPlaylist[rand() % numberOfLiked].play();
+		for (int i = 0; i < 5; i++) {
+			if (this->numberOfLiked == 0) {
+				throw EmptyPlaylist();
+			}
+			else {
+				currPlaylist[rand() % numberOfLiked].play();
+			}
 		}
 	}
 
