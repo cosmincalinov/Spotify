@@ -15,6 +15,7 @@ int main()
     srand(time(NULL));
 
     Interface::getInstance().displayGreetingMessage();
+    Interface::getInstance().initDefs();
 
     try {
         Interface::getInstance().run();

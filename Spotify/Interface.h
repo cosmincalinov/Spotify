@@ -287,5 +287,21 @@ public:
         defSongs[songNumber].play();
     }
 
+    void initDefs() {
+        //songs
+        defSongs.add(Song("Nothing Else Matters", "Metallica"));
+        defSongs.add(Song("Africa", "Toto"));
+        defSongs.add(Song("Smells like Teen Spirit", "Nirvana"));
+        defSongs.add(Song("Bohemian Rhapsody", "Queen"));
+        defSongs.add(Song("Purple Rain", "Prince"));
+        //podcasts
+        defPodcasts.add(Podcast("Major Jobs", "Teland La"));
+        defPodcasts.add(Podcast("Joe Rogan Experience", "Joe Rogan"));
+        defPodcasts.add(Podcast("Huberman Lab", "Andrew Huberman"));
+        //playlists
+        defPlaylists.add(Playlist("Chill beats"));
+        defPlaylists.add(Playlist("Heavy metal"));
+    }
+
 };
 
