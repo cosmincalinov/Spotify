@@ -9,17 +9,22 @@
 #include "LikedSongs.h"
 #include "MyQueue.h"
 #include "WrongInput.h"
+#include "Defaults.h"
 
 class Interface{
 private:
-    std::vector<Song> defSongs{ Song("Nothing Else Matters", "Metallica"), Song("Africa","Toto"),
+    /*std::vector<Song> defSongs{ Song("Nothing Else Matters", "Metallica"), Song("Africa","Toto"),
     Song("Smells like Teen Spirit", "Nirvana"), Song("Bohemian Rhapsody","Queen"), 
     Song("Purple Rain","Prince")};
 
     std::vector<Podcast> defPodcasts{ Podcast("Major Jobs", "Teland La"),
     Podcast("Joe Rogan Experience","Joe Rogan"), Podcast("Huberman Lab","Andrew Huberman")};
 
-    std::vector<Playlist> defPlaylists{ Playlist("Chill beats"), Playlist("Heavy metal")};
+    std::vector<Playlist> defPlaylists{ Playlist("Chill beats"), Playlist("Heavy metal")};*/
+
+    Defaults<Song> defSongs;
+    Defaults<Podcast> defPodcasts;
+    Defaults<Playlist> defPlaylists;
 
 	Interface(){}
 	~Interface(){}
@@ -96,7 +101,7 @@ public:
             switch (menuInput) {
             case 1:
                 system("cls");
-                for (Song s : defSongs) std::cout << s;
+                defSongs.show<Song>();
                 printSongMenu();
                 int songMenuInput;
                 std::cin >> songMenuInput;
@@ -124,7 +129,7 @@ public:
                 break;
             case 2:
                 system("cls");
-                for (Podcast p : defPodcasts) std::cout << p;
+                defPodcasts.show<Podcast>();
                 printPodcastMenu();
                 int podcastMenuInput;
                 std::cin >> podcastMenuInput;
@@ -148,7 +153,7 @@ public:
                 break;
             case 3:
                 system("cls");
-                for (Playlist play : defPlaylists) std::cout << play;
+                defPlaylists.show<Playlist>();
                 std::cout << std::endl;
                 printPlaylistMenu();
                 int playlistMenuInput;
@@ -209,7 +214,7 @@ public:
         std::cout << "Enter the song's name: ";
         std::cin >> customName;
         std::unique_ptr<Song> createdSong = std::make_unique<Song>(customName, "Me");
-        defSongs.push_back(*createdSong);
+        defSongs.add(*createdSong);
     }
 
     void createPodcast(){
@@ -217,7 +222,7 @@ public:
         std::cout << "Enter the podcast's name: ";
         std::cin >> customName;
         std::unique_ptr<Podcast> createdPodcast = std::make_unique<Podcast>(customName, "Me");
-        defPodcasts.push_back(*createdPodcast);
+        defPodcasts.add(*createdPodcast);
     }
 
     void createPlaylist() {
@@ -225,7 +230,7 @@ public:
         std::cout << "Enter the playlist's name: ";
         std::cin >> customName;
         std::unique_ptr<Playlist> createdPlaylist = std::make_unique<Playlist>(customName);
-        defPlaylists.push_back(*createdPlaylist);
+        defPlaylists.add(*createdPlaylist);
     }
 
     void playPlaylist() {
@@ -240,7 +245,7 @@ public:
         int playlistNumber;
         std::cin >> playlistNumber;
 
-        for (Song so : defSongs) std::cout << so;
+        defSongs.show<Song>();
         std::cout << "Choose the song's number: ";
         int addNumber;
         std::cin >> addNumber;
@@ -281,5 +286,6 @@ public:
         std::cin >> songNumber;
         defSongs[songNumber].play();
     }
+
 };
 
