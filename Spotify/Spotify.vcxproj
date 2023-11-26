@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Defaults.cpp" />
     <ClCompile Include="EmptyPlaylist.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="LikedSongs.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="WrongInput.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Defaults.h" />
     <ClInclude Include="EmptyPlaylist.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="LikedSongs.h" />
