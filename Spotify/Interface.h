@@ -13,18 +13,11 @@
 
 class Interface{
 private:
-    /*std::vector<Song> defSongs{ Song("Nothing Else Matters", "Metallica"), Song("Africa","Toto"),
-    Song("Smells like Teen Spirit", "Nirvana"), Song("Bohemian Rhapsody","Queen"), 
-    Song("Purple Rain","Prince")};
-
-    std::vector<Podcast> defPodcasts{ Podcast("Major Jobs", "Teland La"),
-    Podcast("Joe Rogan Experience","Joe Rogan"), Podcast("Huberman Lab","Andrew Huberman")};
-
-    std::vector<Playlist> defPlaylists{ Playlist("Chill beats"), Playlist("Heavy metal")};*/
-
     Defaults<Song> defSongs;
     Defaults<Podcast> defPodcasts;
     Defaults<Playlist> defPlaylists;
+
+    bool indexFlag = 0;
 
 	Interface(){}
 	~Interface(){}
@@ -101,7 +94,8 @@ public:
             switch (menuInput) {
             case 1:
                 system("cls");
-                defSongs.show<Song>();
+                if (this->indexFlag == 0) defSongs.show<Song>();
+                else defSongs.show<char>();
                 printSongMenu();
                 int songMenuInput;
                 std::cin >> songMenuInput;
@@ -129,7 +123,8 @@ public:
                 break;
             case 2:
                 system("cls");
-                defPodcasts.show<Podcast>();
+                if (this->indexFlag == 0) defPodcasts.show<Podcast>();
+                else defPodcasts.show<char>();
                 printPodcastMenu();
                 int podcastMenuInput;
                 std::cin >> podcastMenuInput;
@@ -153,7 +148,8 @@ public:
                 break;
             case 3:
                 system("cls");
-                defPlaylists.show<Playlist>();
+                if(this->indexFlag == 0) defPlaylists.show<Playlist>();
+                else defPlaylists.show<char>();
                 std::cout << std::endl;
                 printPlaylistMenu();
                 int playlistMenuInput;
@@ -303,5 +299,11 @@ public:
         defPlaylists.add(Playlist("Heavy metal"));
     }
 
+    void modifyIndexFlag() {
+        std::cout << "Would you like your songs and podcasts to be indexed with numbers(0) or letters(1)?" << std::endl;
+        bool flagInput;
+        std::cin >> flagInput;
+        this->indexFlag = flagInput;
+    }
 };
 

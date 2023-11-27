@@ -17,7 +17,7 @@ public:
 	template<>
 	void show<char>() {
 		for (int i = 0; i < def.size(); i++) {
-			std::cout << (char)(i + 141) << ". " << def[i] << std::endl;
+			std::cout << (char)(i + 97) << ". " << def[i] << std::endl;
 		}
 	}
 
